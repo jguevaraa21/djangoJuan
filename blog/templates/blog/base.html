@@ -1,0 +1,68 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+
+            <h1><a href="/">Introducción a Django</a></h1>
+        </div>
+            <div class="content container2">
+                <header>
+                    <h4>En el mundo del desarrollo web, existen herramientas que facilitan la vida a los programadores, permitiéndoles crear sitios web
+                    <br> complejos y funcionales de manera eficiente. Entre estas herramientas, destaca Django, un marco
+                    <br> de trabajo web escrito en Python que se ha convertido en la opción preferida para muchos desarrolladores.</h4>
+                </header> 
+
+            <h3> ¿Que es Django? </h3>
+
+                        <header> 
+                            <h4>Imagina a Django como un conjunto de herramientas prediseñadas para construir una casa.
+                            <br>En lugar de comenzar desde cero,
+                            con Django tienes los planos, los ladrillos, las ventanas y hasta las puertas listos para usar. 
+                            <br> Esto te permite enfocarte en la parte creativa y funcional de la construcción, ahorrando tiempo y esfuerzo.</h4>
+                        </header>    
+
+            <h3> ¿Para qué funciona Django? </h3>
+
+                        <header>
+                            <h5>Django te permite crear una amplia gama de aplicaciones web, desde sitios web simples hasta plataformas complejas. 
+                            <br>Entre sus usos más comunes se encuentran:</h5>
+                            <li>Sitios web dinámicos: Blogs, foros, tiendas en línea, plataformas de cursos, etc.</li>
+                            <li>Aplicaciones web de una sola página (SPA): Sitios web interactivos que cargan una sola vez y se actualizan sin necesidad de recargar la página.</li>
+                            <li>Aplicaciones web móviles: Puedes utilizar Django junto con frameworks como Django REST Framework para crear backends para aplicaciones móviles.</li>
+                            <li>APIs: Interfaces de programación de aplicaciones que permiten a otras aplicaciones acceder a tus datos y funcionalidades.</li>
+                        </header>
+
+            <h3>¿Qué hace que Django sea especial?</h3>
+
+                        <header>
+                            <h5>Varias características hacen de Django un marco de trabajo web excepcional:</h5>
+                            <li>Flexibilidad: Django se adapta a tus necesidades, permitiéndote crear desde proyectos pequeños hasta grandes sistemas empresariales.</li>
+                            <li>Escalabilidad: A medida que tu aplicación crece, Django puede manejar el aumento de tráfico y usuarios sin problemas.</li>
+                            <li>Seguridad: Django incorpora funciones de seguridad para proteger tus datos y tu aplicación de ataques cibernéticos.</li>
+                            <li>Facilidad de uso: Django tiene una sintaxis clara y sencilla, lo que lo hace ideal para principiantes y experimentados.</li>
+                            <li>Comunidad grande: Una comunidad activa de desarrolladores de Django que comparten recursos, tutoriales y soporte.</li>
+                            </header>
+                
+
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
